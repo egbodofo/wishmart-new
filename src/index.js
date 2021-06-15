@@ -12,8 +12,6 @@ import jwtDecode from 'jwt-decode';
 import { setCurrentUser } from './store/actions/login';
 import rootReducer from './utils/rootReducer';
 
-// const store = createStore((state = {}) => state, applyMiddleware(thunk));
-
 const composeEnhancers = window._REDUX_DEVTOOLS_EXTENSION_COMPOSE_ || compose;
 
 const store = createStore(
@@ -36,7 +34,4 @@ const app = (
 
 ReactDOM.render(app, document.getElementById('root'));
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();

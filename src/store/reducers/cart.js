@@ -50,7 +50,6 @@ const removeCart = (state, action) => {
 
 const incQty = (state, action) => {
   let addedItem = state.addedItems.find(item => item._id === action.id);
-  // let addedPrice = state.addedItems.find(item => item._id === action.id);
   addedItem.quantity += 1;
   let newTotal = state.total + addedItem.price;
   return {
@@ -61,11 +60,9 @@ const incQty = (state, action) => {
 
 const decQty = (state, action) => {
   let addedItem = state.addedItems.find(item => item._id === action.id);
-  // let decPrice = state.addedItems.find(item => item._id === action.id);
   //if the qt == 0 then it should be removed
   if (addedItem.quantity === 1) {
     let new_items = state.addedItems.filter(item => item.id !== action.id);
-    // decPrice.price = decPrice.price - addedItem.price;
     let newTotal = state.total - addedItem.price;
     return {
       ...state,

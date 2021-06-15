@@ -1,5 +1,4 @@
 import React from 'react';
-// import { MDBCol } from 'mdbreact';
 import styled from 'styled-components';
 import './Table.css';
 
@@ -32,8 +31,7 @@ const TableImg = props => {
       <div id="f1_container">
         <div id="f1_card" className="shadow">
           <Img className="front face">
-            {/* <img alt="faby" src="/images/Cirques.jpg" /> */}
-            <img className="img-fluid" alt="" src={props.obj.image} />
+            <img className="img-fluid" alt="home-pic" src={props.obj.image} />
           </Img>
           <Imgg className="back face center">
             <h3>Name: {props.obj.name}</h3>

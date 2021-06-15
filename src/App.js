@@ -28,17 +28,11 @@ const Cart = React.lazy(() => {
   return import('./components/Cart/Cart');
 });
 
-// const Edit = React.lazy(() => {
-//   return import('./components/Products/Edit/Edit');
-// });
 
 const Show = React.lazy(() => {
   return import('./components/Products/Show/Show');
 });
 
-// const NewProduct = React.lazy(() => {
-//   return import('./containers/NewProduct/NewProduct');
-// });
 
 const CheckOut = React.lazy(() => {
   return import('./containers/Checkout/Checkout');
@@ -58,11 +52,6 @@ function App() {
       <Route path="/cart" exact render={props => <Cart {...props} />} />
       <Route path="/checkout" exact render={props => <CheckOut {...props} />} />
       <Route path="/pay" exact render={props => <Pay {...props} />} />
-      {/* <Route
-        path="/products/:id/edit"
-        exact
-        render={props => <Edit {...props} />}
-      /> */}
       <Route path="/products/:id/edit" component={requireAuth(Edit)} />
       <Route path="/products/add" component={requireAuth(NewProduct)} />
       <Route
@@ -70,14 +59,8 @@ function App() {
         exact
         render={props => <Show {...props} />}
       />
-      {/* <Route
-        path="/products/add"
-        exact
-        render={props => <NewProduct {...props} />}
-      /> */}
     </Switch>
   );
-  // ba
 
   return (
     <div>
